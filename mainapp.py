@@ -9,7 +9,11 @@ def getSolvedProblems(doc, username):
     pattern = '/status/(.{3,8}),' + username + '/'
     return re.findall(pattern, doc)
 
+<<<<<<< HEAD
 @app.route('/spojscrap/userdiff/<username1>/<username2>/')
+=======
+@app.route('/spojscrap/userdiff/<username1>/<username2>')
+>>>>>>> 58543bec4233b2b063f686382722b2183258cea3
 def userdiff(username1, username2):
     u1solved = getSolvedProblems(
         requests.get(USER_PAGE.format(username=username1)).content, username1)
