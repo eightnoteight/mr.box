@@ -1,6 +1,6 @@
 import requests
 import re
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 app = Flask(__name__)
 
 USER_PAGE = 'http://www.spoj.com/users/{username}/'
@@ -30,8 +30,8 @@ def userdiff(username1, username2):
 
 
 @app.route('/')
-def hello_world():
-    return 'hello_world'
+def home():
+    return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True, host='0.0.0.0', port=8080)
